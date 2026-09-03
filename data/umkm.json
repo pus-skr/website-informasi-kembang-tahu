@@ -1,22 +1,22 @@
 [
-    {
-        "id": 1,
-        "nama": "Kembang Tahu Pak Tarsa",
-        "pemilik": "Pak Tarsa",
-        "lokasi": "Blok Cigaluga, Desa Panambangan",
-        "deskripsi": "Salah satu perajin Kembang Tahu tertua di Desa Panambangan. Usaha ini telah dijalankan secara turun-temurun dan dikenal dengan tekstur Kembang Tahu yang sangat lembut serta kuah jahe yang khas.",
-        "produk": "Kembang Tahu Original",
-        "whatsapp": "6283187355920",
-        "status": "aktif"
-    },
-    {
-        "nama": "Kembang Tahu Pak Ujang",
-        "pemilik": "Pak Ujang",
-        "whatsapp": "6282213066810",
-        "status": "aktif",
-        "lokasi": "Blok Cantilan Balong, Desa Panambangan",
-        "produk": "Kembang Tahu Original",
-        "deskripsi": "Usaha Kembang Tahu yang fokus pada produksi harian dan penjualan keliling. Melayani pesanan untuk acara hajatan dan kegiatan desa.",
-        "id": 4
-    }
+  {
+    "nama": "Kembang Tahu Pak Tarsa",
+    "pemilik": "Pak Tarsa",
+    "whatsapp": "6283187355920",
+    "status": "aktif",
+    "lokasi": "Blok Cigaluga, Desa Panambangan",
+    "produk": "Kembang Tahu Original",
+    "deskripsi": "Salah satu pelaku UMKM Kembang Tahu tertua di Desa Panambangan. Usaha ini telah dijalankan secara turun-temurun dan dikenal dengan tekstur Kembang Tahu yang sangat lembut serta kuah jahe yang khas.",
+    "id": 1
+  },
+  {
+    "nama": "Kembang Tahu Pak Ujang",
+    "pemilik": "Pak Ujang",
+    "whatsapp": "6282213066810",
+    "status": "aktif",
+    "lokasi": "Blok Cantilan Balong, Desa Panambangan",
+    "produk": "Kembang Tahu Original",
+    "deskripsi": "Usaha Kembang Tahu yang fokus pada produksi harian dan penjualan keliling. Melayani pesanan untuk acara hajatan dan kegiatan desa.",
+    "id": 4
+  }
 ]
