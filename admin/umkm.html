@@ -197,15 +197,20 @@
 
   <script src="js/admin.js?v=2.0"></script>
   <script>
-    function openUmkmModal(){ document.getElementById('umkmModal').classList.remove('hidden'); document.getElementById('umkmModal').classList.add('flex'); }
-    function closeUmkmModal(){ document.getElementById('umkmModal').classList.add('hidden'); document.getElementById('umkmModal').classList.remove('flex'); }
-    function openDeleteModal(){ document.getElementById('deleteConfirmModal').classList.remove('hidden'); document.getElementById('deleteConfirmModal').classList.add('flex'); }
-    function closeDeleteModal(){ document.getElementById('deleteConfirmModal').classList.add('hidden'); document.getElementById('deleteConfirmModal').classList.remove('flex'); }
-    // Expose for admin.js compatibility
-    window._openUmkmModal = openUmkmModal;
-    window._closeUmkmModal = closeUmkmModal;
-    window._openDeleteModal = openDeleteModal;
-    window._closeDeleteModal = closeDeleteModal;
+    function closeUmkmModal(){
+        document.getElementById('umkmModal').classList.add('hidden');
+        document.getElementById('umkmModal').classList.remove('flex');
+    }
+
+    function openDeleteModal(){
+        document.getElementById('deleteConfirmModal').classList.remove('hidden');
+        document.getElementById('deleteConfirmModal').classList.add('flex');
+    }
+
+    function closeDeleteModal(){
+        document.getElementById('deleteConfirmModal').classList.add('hidden');
+        document.getElementById('deleteConfirmModal').classList.remove('flex');
+    }
   </script>
 </body>
 </html>
