@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    window.location.href = 'dashboard.html';
+                    window.location.href = '/admin/dashboard.html';
                 } else {
                     errorMsg.textContent = data.message || 'Login gagal';
                     errorMsg.classList.remove('hidden');
