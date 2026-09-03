@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Web Informasi Kembang Tahu Panambangan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    
+    /* Animation classes for fade-up */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#ffffff",
+            "background": "#fcf9f4",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#e3beb8",
+            "inverse-primary": "#efc04b",
+            "on-surface-variant": "#4e4635",
+            "surface-variant": "#e5e2dd",
+            "tertiary-container": "#ba9892",
+            "on-primary-fixed": "#251a00",
+            "surface-container-high": "#ebe8e3",
+            "on-primary-fixed-variant": "#5a4300",
+            "on-secondary-fixed": "#00210a",
+            "on-secondary": "#ffffff",
+            "surface": "#fcf9f4",
+            "tertiary-fixed": "#ffdad4",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#bcefc0",
+            "on-surface": "#1c1c19",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dcdad5",
+            "surface-container-highest": "#e5e2dd",
+            "secondary": "#3a6843",
+            "surface-container-low": "#f6f3ee",
+            "secondary-fixed-dim": "#a0d3a5",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#473400",
+            "on-secondary-container": "#3e6d47",
+            "tertiary": "#745853",
+            "secondary-container": "#b9ecbd",
+            "outline-variant": "#d1c5af",
+            "on-background": "#1c1c19",
+            "primary-fixed-dim": "#efc04b",
+            "on-tertiary-fixed": "#2b1613",
+            "on-tertiary-container": "#49312c",
+            "on-secondary-fixed-variant": "#22502d",
+            "surface-container": "#f0ede9",
+            "surface-tint": "#775a00",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#31302d",
+            "primary-fixed": "#ffdf9a",
+            "surface-bright": "#fcf9f4",
+            "primary": "#775a00",
+            "on-tertiary-fixed-variant": "#5b403c",
+            "error": "#ba1a1a",
+            "primary-container": "#c59a27",
+            "outline": "#807663"
+          },
+          "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          "spacing": { "space-xs": "0.5rem", "space-2xs": "0.25rem", "space-md": "1rem", "container-max": "1240px", "space-3xl": "4.5rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-4xl": "6rem", "gutter-desktop": "1.5rem", "space-xl": "2rem" },
+          "fontFamily": {
+            "headline-lg": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Playfair Display"]
+          },
+          "fontSize": {
+            "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }],
+            "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+  <header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-md shadow-[0_12px_28px_-4px_rgba(62,39,35,0.08)]">
+    <div class="h-20 max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm sm:gap-space-md">
+        <a href="#beranda" class="flex items-center gap-space-xs flex-shrink-0 focus:outline-none">
+          <img src="img/logo.svg" alt="Logo Kembang Tahu Panambangan" class="h-10 w-auto object-contain">
+        </a>
+        <div class="hidden lg:flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/60 flex-shrink-0">
+          <div class="flex items-center gap-2">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARd48Wd-uks6auAe9dZ4Wubpn6UF_xBPXqWYVniSF3JwcBpS0gDi5JBTdnsBDSgfWBDPkTRvAzntl7BVmQcYtXodn8GHWkUZoRbCWut1tSGrMRZ_7IvhTOvK_a_K3NvsldZn4G4w7G6cxpUUwogPp0Pcxbqtz1lpF-MU1qPl9u12iRo64bppSH3lkIEkjguRe95Lzk_8MU9t3yMY3UZN6TlhF3u7MgQKMsGH7VwLS9Trf-sQxd9fdxS5FqXdK1hkZzLA" alt="Logo UMC Cirebon" class="h-8 w-auto object-contain">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoBRbTTSORKU68mQpor2ufXo82peVvr-6j6Lg67slKLZkLm5U3RbnRL4N53_m954YTH7W0Ppp24VnfaW94sMq51_JaClJIWIqQfPXZSq3M4WmurfMbc2yp6VvwkNB6nHq6zOTABeBQ8iA5t4xH-I2UlryWem3EpFXLx5aCVxPlMJeDoHN-tzfq5c-IODb9QfpmSXrT7D_e8slu0pIA6UYpUJcHc6GcHxRU-tZTElV9MKgFRHJeGk6cOv4o3ti6M1Rl9w" alt="Logo KKM 14 UMC" class="h-8 w-auto object-contain rounded-full">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGcGo-2M-I-Tb5kDHrkQgJlj3SiIIiP6uEJzdwjGTGjb_nbtJBLoPLbro56k8XwLfRI2umlvuDAYB5obv5z81Ap3yhPkIOkERNdvxMMjt6eIxc0l2Kveu0dTO1wi4a9ntGCOd6URWcXgTCa42awzk8dJ0RNp5vES9S7b-1S9a2iGdj87BaB7aZURObN05CFYuYg-L5oo4sRNpScP2KqLtg-Ol-zLBH9d2FN7rJAK3ve83HUqvz0D2_SpbgaAZx6a1SMQ" alt="Logo Desa Panambangan Maju" class="h-8 w-auto object-contain">
+          </div>
+        </div>
+      </div>
+      <nav class="hidden lg:flex items-center gap-space-md xl:gap-space-lg flex-shrink-0" id="navbar-nav">
+        <a aria-current="page" class="nav-link py-1 text-primary font-bold border-b-2 border-primary-container" href="#beranda">Beranda</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#tentang">Tentang</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#sejarah">Sejarah</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#proses">Proses</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#direktori-umkm">Direktori UMKM</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#keunggulan">Keunggulan</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#galeri">Galeri</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#lokasi">Lokasi</a>
+        <a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- SECTION HERO (BERANDA) -->
+      <section class="relative overflow-hidden bg-surface pt-space-xl pb-space-3xl lg:pt-space-2xl lg:pb-space-4xl" id="beranda">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-7 flex flex-col items-start gap-space-md z-10">
+              <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm fade-up" data-delay="100">
+                <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Warisan Kuliner Tradisional Desa Panambangan</span>
+              </div>
+              <h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-on-surface leading-tight font-bold fade-up" data-delay="200">
+                Kembang Tahu Asli Panambangan: <span class="italic text-primary">Kelembutan Tradisi</span> Sejak 1960-an
+              </h1>
+              <p class="font-body-lg text-body-md lg:text-body-lg text-on-surface-variant max-w-2xl fade-up" data-delay="300">
+                Dokumentasi digital, arsip sejarah, dan direktori resmi pelaku UMKM kembang tahu di Desa Panambangan, Kec. Sedong, Kab. Cirebon. Menyajikan cita rasa otentik dengan sari kedelai murni dan kehangatan kuah jahe rempah.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-sm pt-space-xs fade-up" data-delay="400">
+                <a class="inline-flex items-center gap-space-xs font-label-md text-label-md bg-primary-container text-on-primary-container px-space-lg py-space-sm rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 shadow-md hover:shadow-xl" href="#tentang">
+                  <span class="">Jelajahi Arsip</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+              </div>
+              <div class="w-full mt-space-xs p-space-sm sm:p-space-md rounded-2xl bg-surface-container-lowest/90 border border-primary-container/30 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-space-sm fade-up" data-delay="500">
+                <div class="flex items-center gap-2 flex-shrink-0">
+                  <div class="w-10 h-10 rounded-full bg-white p-1 shadow-sm border border-outline-variant/40 flex items-center justify-center">
+                    <img alt="Universitas Muhammadiyah Cirebon" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYGjgQmhwr9eIf--ujxkft18paxbUTD45B1PKgIcF5hJb1h_BqyjaF7yaCGk9AEcaze2M6ToRunsGVc7fSK94JIAg58VgLViKR1Qy8338sZUYk2KGSVH-KglckwHAvH-4i5q3poFltfq55o695cdTr62KQEWZcsB1FboTPMvw4BPrLVM11vmRFWem1jdAQzlpoKqXWSpKd6nB8-KaM_Z4quGfWALF2z9xpeETkELd243prtp61PrlC3Yge2oWsvtmBNg">
+                  </div>
+                  <div class="w-10 h-10 rounded-full bg-white p-0.5 shadow-sm border border-outline-variant/40 flex items-center justify-center">
+                    <img alt="KKM 14 Desa Panambangan" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASfptCmkZJIybiPeIWokhgxfCz6ighFO5SK3SnekFZek7NaiuV7v9Qytvbgv5M40yUQobVNIgLOKUQUmod2APNrouMHQSad0IK2K_LiZp6iwSGHKesIXlxkOxEXvaBtWkmBJwBybItLwsqKoF14EeoVzXHSv1ZIemMffCzDwrVNtvqsHAFUhPBXm7GAuPo3zdMwcOS4U3rcQS43V0EjSAYWV8vbVxgplssI6NMTuD114kXSdhBfROgXFPnWWigaQW67Q">
+                  </div>
+                  <div class="w-10 h-10 rounded-lg bg-white p-0.5 shadow-sm border border-outline-variant/40 flex items-center justify-center">
+                    <img alt="Desa Panambangan Maju" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGKqQ1GW6PElG0vfBUEeHZ8SbgREutpc8kfioggg-vNse8MgkkGOcH9yu0D0XHPfiBWupDQz-N7lbRrBCLeStfUmmRF0tMDzNRFhPTzbUiHoRTO0uAdMbc07e8rDiFj1FxYtdhnSr7b6BaHpADII8Q7-o2zGVfVtPCM65kyOF24Z4U1higYq2IwS-YqX8Bxx-2bY_CJbzu15BK0UA6EnW2oxG9QHXLHvOXNstc0ojGoB58sr27IymUx2rtCQgs-HmXQA">
+                  </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <span class="font-label-sm text-label-sm font-semibold text-primary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">verified</span> Program Kemitraan &amp; Pengabdian Masyarakat
+                  </span>
+                  <p class="font-body-sm text-[13px] text-on-surface-variant leading-snug mt-0.5">
+                    Didukung oleh <strong>Kuliah Kerja Mahasiswa (KKM) 14 Universitas Muhammadiyah Cirebon</strong> bekerjasama dengan <strong>Pemerintah Desa Panambangan</strong> untuk digitalisasi UMKM kembang tahu.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Dynamic Statistics Badges -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm w-full pt-space-lg mt-space-sm fade-up" data-delay="600">
+                <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col items-center text-center">
+                  <span class="font-display-lg text-[32px] text-primary font-bold leading-none counter" data-target="100" data-suffix="+">0</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-space-2xs">Pelaku UMKM</span>
+                </div>
+                <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col items-center text-center">
+                  <span class="font-display-lg text-[32px] text-primary font-bold leading-none counter" data-target="50" data-suffix="+ Thn">0</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-space-2xs">Warisan Tradisi</span>
+                </div>
+                <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col items-center text-center">
+                  <span class="font-display-lg text-[32px] text-secondary font-bold leading-none counter" data-target="6" data-suffix=" Tahap">0</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-space-2xs">Produksi Alami</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Visual Banner -->
+            <div class="lg:col-span-5 relative flex justify-center mt-space-lg lg:mt-0 fade-up" data-delay="400">
+              <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl bg-surface-container-high">
+                <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-out" src="img/hero-banner.png">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-space-md inset-x-space-md text-white">
+                  <span class="inline-block px-space-xs py-1 bg-primary-container text-on-primary-container rounded-md font-label-sm text-label-sm mb-space-2xs">Kembang Tahu</span>
+                  <p class="font-headline-sm text-headline-sm leading-tight text-white">Kehangatan Rempah Kuah Jahe Asli</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION TENTANG & SEJARAH LENGKAP (#tentang) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface-container-low" id="tentang">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">history_edu</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Arsip &amp; Warisan Budaya</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold" id="sejarah-judul">
+              Mengenal Kembang Tahu Panambangan
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs" id="sejarah-deskripsi">
+              Menjaga kemurnian tradisi olahan kedelai secara turun-temurun, melahirkan kelembutan tekstur legendaris yang menghangatkan Cirebon dan Nusantara.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-space-xl items-stretch mb-space-3xl fade-up">
+            <div class="bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm flex flex-col justify-between">
+              <div class="space-y-space-md" id="sejarah-container">
+                <!-- Sejarah konten will be injected by main.js if needed, or kept static for this part -->
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[28px]">ramen_dining</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface">Apa Itu Kembang Tahu Panambangan?</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Kembang tahu atau dikenal juga sebagai <span class="font-semibold text-primary">Tahwa / Tahu Sutra</span> adalah lapisan protein nabati murni yang terangkat saat sari kedelai berkualitas tinggi direbus secara perlahan. Berbeda dengan olahan tahu padat, kembang tahu Panambangan terkenal dengan teksturnya yang sangat halus, meluncur lembut di lidah tanpa residu.
+                </p>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Disajikan bersama kuah hangat yang diracik dari rebusan jahe, gula aren, serai wangi, dan daun pandan segar. Kombinasi ini menghadirkan sensasi menenangkan, meningkatkan imunitas tubuh, dan meredakan masuk angin.
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-md bg-surface-container-low -mx-space-xl -mb-space-xl p-space-lg rounded-b-2xl flex items-center gap-space-md">
+                <span class="material-symbols-outlined text-secondary text-[32px]">health_and_safety</span>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">Kandungan protein nabati bebas kolesterol dengan kehangatan rempah alami nusantara.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION SEJARAH TIMELINE (#sejarah) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface border-t border-b border-surface-container-high" id="sejarah">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">auto_stories</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Warisan Budaya &amp; Kearifan Lokal</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">Sejarah &amp; Perjalanan Tradisi Kembang Tahu Desa Panambangan</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs leading-relaxed">Desa Panambangan, Kecamatan Sedong, Kabupaten Cirebon, dikenal luas sebagai sentra penghasil kembang tahu legendaris. Di balik kelezatan semangkuk kembang tahu berkuah jahe hangat, tersimpan kisah perjuangan, solidaritas antarkeluarga, dan kerja keras yang diwariskan turun-temurun oleh sosok <strong>Bapak Saad, Bapak Jasma, dan Bapak Tarsa</strong>.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start mb-space-3xl">
+            <div class="lg:col-span-4 bg-surface-container-low p-space-xl rounded-3xl border border-outline-variant/40 flex flex-col justify-between h-full fade-up">
+              <div class="space-y-space-md">
+                <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[28px]">hourglass_top</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Jejak Sejarah: Dari Perantauan hingga Regenerasi</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Kisah perjuangan Pak Saad, Bapak Jasma, dan Bapak Tarsa menjadi fondasi kuat yang membuktikan bahwa kembang tahu bukan sekadar kuliner penolak masuk angin.</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Melainkan simbol kebanggaan, kerja keras, dan warisan ekonomi yang telah berhasil menghidupkan dan mengangkat derajat warga Desa Panambangan dari masa ke masa.</p>
+              </div>
+              <div class="mt-space-xl p-space-md bg-surface-container-lowest rounded-2xl border border-primary-container/30">
+                <div class="flex items-center gap-space-xs text-primary font-semibold font-label-sm text-label-sm">
+                  <span class="material-symbols-outlined text-[18px]">verified</span>
+                  <span class="">Komitmen Pelestarian</span>
+                </div>
+                <p class="text-[13px] text-on-surface-variant mt-1 leading-snug">Didukung generasi perajin penerus dan bimbingan akademis desa guna menjaga resep leluhur tetap abadi.</p>
+              </div>
+            </div>
+
+            <div class="lg:col-span-8 bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-3xl border border-outline-variant/40 shadow-sm fade-up">
+              <h3 class="font-title-md text-title-md text-on-surface font-bold mb-space-lg flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[22px]">timeline</span>Kronik Lini Masa Perjalanan Kembang Tahu
+              </h3>
+              <div class="relative space-y-space-lg" id="timeline-container">
+                <div class="absolute top-3 bottom-3 left-4 -ml-[1px] w-0.5 bg-primary-container/30"></div>
+                <!-- Timeline items statically defined from Stitch design, will be kept static as they look good -->
+                <div class="relative pl-10 fade-up" data-delay="100">
+                  <div class="absolute left-4 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shadow">
+                    <span class="material-symbols-outlined text-[12px]">history</span>
+                  </div>
+                  <div class="bg-surface-container-low p-space-md rounded-2xl border border-outline-variant/40">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <h4 class="font-title-md text-title-md text-on-surface font-bold">Awal Merantau ke Jambi</h4>
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-[12px] font-bold">1958 - 1960</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Sebelum mengenal kembang tahu, Pak Saad terlebih dahulu merantau dan bekerja sebagai kuli atau pekerja bangunan di Jambi selama kurang lebih dua tahun.</p>
+                  </div>
+                </div>
+                <div class="relative pl-10 fade-up" data-delay="200">
+                  <div class="absolute left-4 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow">
+                    <span class="material-symbols-outlined text-[12px]">directions_walk</span>
+                  </div>
+                  <div class="bg-surface-container-low p-space-md rounded-2xl border border-outline-variant/40">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <h4 class="font-title-md text-title-md text-on-surface font-bold">Menemukan Resep Rahasia</h4>
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-[12px] font-bold">1960 - 1962</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Pak Saad pindah merantau ke Jakarta. Beliau bertemu dengan Nona Chong (janda Tionghoa di Gang Petasan) yang kemudian memodali dan mengajarkan resep kembang tahu. Pada masa itu, kembang tahu dimonopoli oleh warga Tionghoa (hanya ada 7 pikulan di seluruh Jakarta).</p>
+                  </div>
+                </div>
+                <div class="relative pl-10 fade-up" data-delay="300">
+                  <div class="absolute left-4 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow">
+                    <span class="material-symbols-outlined text-[12px]">diversity_3</span>
+                  </div>
+                  <div class="bg-surface-container-low p-space-md rounded-2xl border border-outline-variant/40">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <h4 class="font-title-md text-title-md text-on-surface font-bold">Masa Ekspansi &amp; Regenerasi</h4>
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-container/30 text-on-primary-container font-label-sm text-[12px] font-bold">Pertengahan 1960-an</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Ilmu pembuatan kembang tahu mulai dibawa ke Desa Panambangan (sekitar 1965 - 1968). Setelah sukses belajar dari Nona Chong dan bekerja pada Babah Supandi di Jembatan Gambang, Pak Saad tertantang memperluas jaringan. Ia merekrut pemuda Panambangan yang menganggur. Rombongan gelombang pertama yang diajari langsung adalah Bapak Jasma (kakaknya) dan Bapak Tarsa (keponakannya).</p>
+                  </div>
+                </div>
+                <div class="relative pl-10 fade-up" data-delay="400">
+                  <div class="absolute left-4 -translate-x-1/2 top-1.5 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow">
+                    <span class="material-symbols-outlined text-[12px]">home</span>
+                  </div>
+                  <div class="bg-surface-container-low p-space-md rounded-2xl border border-secondary/30">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <h4 class="font-title-md text-title-md text-on-surface font-bold">Kepulangan ke Desa &amp; Kemandirian</h4>
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[12px] font-bold">Akhir 1960-an - 1970-an</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Usaha kembang tahu makin marak ditekuni warga. Gelombang demi gelombang pemuda Panambangan yang diajari meracik kembang tahu akhirnya pulang dan mendirikan usaha secara mandiri. Lambat laun, desa bertransformasi menjadi sentra produsen kembang tahu yang dikenal hingga ke berbagai kota.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md fade-up">
+            <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col items-start gap-space-xs">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-1">
+                <span class="material-symbols-outlined text-[22px]">soup_kitchen</span>
+              </div>
+              <h4 class="font-title-md text-title-md text-on-surface font-bold">Bahan Biang (Sakau) Presisi</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Menggunakan bahan bening seperti kaca yang harus melalui proses pembakaran arang dan ditumbuk halus secara manual dengan takaran ketat.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col items-start gap-space-xs">
+              <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-1">
+                <span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+              </div>
+              <h4 class="font-title-md text-title-md text-on-surface font-bold">Kebersihan Mutlak (Tanpa Kompromi)</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Proses pencucian dan pemasakan harus steril. Adonan sangat sensitif—jika terkena air kotor atau rasa asin/garam, adonan dipastikan gagal membeku.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col items-start gap-space-xs">
+              <div class="w-10 h-10 rounded-xl bg-primary-container/30 text-on-primary-container flex items-center justify-center mb-1">
+                <span class="material-symbols-outlined text-[22px]">eco</span>
+              </div>
+              <h4 class="font-title-md text-title-md text-on-surface font-bold">Rempah Kuah Jahe Alami</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Menggunakan murni gula aren/merah berkualitas, jahe asli yang melimpah, serta cengkeh untuk memberikan kehangatan alami yang menyehatkan tubuh.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION PROSES PRODUKSI (#proses) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface" id="proses">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">precision_manufacturing</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Kriya Pangan Otentik</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">
+              6 Tahapan Pembuatan Kembang Tahu Tradisional
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Setiap mangkuk diproduksi dengan ketelitian tinggi, mempertahankan metode otentik tanpa campuran bahan kimia sintesis.
+            </p>
+          </div>
+          <!-- 6 Steps Grid (Injected dynamically via main.js) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="proses-container">
+            <!-- Loading indicator or empty container -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION DIREKTORI UMKM (#direktori-umkm) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface-container-low border-t border-surface-container-high" id="direktori-umkm">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">storefront</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Direktori Resmi</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">
+              Daftar UMKM Kembang Tahu
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Temukan perajin kembang tahu asli Panambangan berdasarkan wilayah.
+            </p>
+          </div>
+
+
+
+          <!-- UMKM Grid (Injected dynamically via main.js) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md" id="umkm-container">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION KEUNGGULAN (#keunggulan) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface" id="keunggulan">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Nilai Otentik</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">
+              Keunggulan Kembang Tahu Panambangan
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Empat pilar utama yang menjadikan kembang tahu Desa Panambangan tetap dicintai lintas generasi.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg fade-up">
+            <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">eco</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Bahan Baku Pilihan</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Menggunakan kedelai berkualitas tinggi, jahe segar, dan gula merah pilihan untuk menghasilkan cita rasa terbaik.
+              </p>
+            </div>
+            <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">local_fire_department</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Hangat &amp; Menyegarkan</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Kuah jahe dan gula merah memberikan sensasi hangat yang menyegarkan tubuh, terutama saat cuaca dingin.
+              </p>
+            </div>
+            <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">vital_signs</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Tekstur Lembut Khas</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Sari kedelai diolah hingga bertekstur sangat lembut seperti puding &mdash; lembut di mulut dan nikmat di lidah.
+              </p>
+            </div>
+            <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">volunteer_activism</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Pemberdayaan Desa</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                Menjadi penopang ekonomi bagi lebih dari 114 Kepala Keluarga (KK) atau kurang lebih 456 jiwa dari usaha berjualan kembang tahu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION GALERI BERKATEGORI (#galeri) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface-container-low" id="galeri">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">photo_library</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Arsip Visual</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">
+              Dokumentasi &amp; Galeri Sentra
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">Dokumentasi visual Kembang Tahu Panambangan — dari produksi hingga produk jadinya</p>
+          </div>
+
+          <!-- Gallery Grid (Injected dynamically via main.js) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md" id="galeri-container">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION LOKASI (#lokasi) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface" id="lokasi">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Col Left: Info Lokasi & Rute -->
+            <div class="lg:col-span-5 flex flex-col gap-space-md fade-up">
+              <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm w-fit">
+                <span class="material-symbols-outlined text-primary text-[18px]">pin_drop</span>
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Geografis &amp; Akses Sentra</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">
+                Kunjungi Desa Panambangan
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Desa Panambangan terletak di kawasan perbukitan sejuk Kecamatan Sedong, Kabupaten Cirebon, Jawa Barat. Sentra produksi tersebar di rumah-rumah perajin sepanjang jalan desa utama.
+              </p>
+              <div class="space-y-space-sm mt-space-xs">
+                <div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+                  <span class="material-symbols-outlined text-primary text-[24px] mt-0.5">directions_car</span>
+                  <div>
+                    <h4 class="font-title-md text-title-md text-on-surface font-bold">Rute dari Kota Cirebon</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Sekitar 45 menit perjalanan via jalur Lemahabang - Sindanglaut ke arah Waduk Sedong. Kondisi jalan beraspal mulus dan mudah dilalui bus wisata maupun kendaraan roda empat.
+                    </p>
+                  </div>
+                </div>
+                <div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+                  <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">schedule</span>
+                  <div>
+                    <h4 class="font-title-md text-title-md text-on-surface font-bold">Waktu Produksi</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Aktivitas produksi Kembang Tahu umumnya berlangsung pada pagi hari, mulai dini hari hingga menjelang siang.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <a class="inline-flex items-center justify-center gap-space-xs bg-primary-container text-on-primary-container px-space-lg py-space-sm rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all shadow-md mt-space-xs w-fit" href="https://maps.google.com/?q=Desa+Panambangan+Kecamatan+Sedong+Cirebon" rel="noopener noreferrer" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">map</span>
+                <span class="">Buka di Google Maps</span>
+              </a>
+            </div>
+            <!-- Col Right: Peta Interaktif UI -->
+            <div class="lg:col-span-7 fade-up" data-delay="200">
+              <div class="relative w-full h-[420px] rounded-3xl overflow-hidden shadow-xl bg-surface-container-high">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAF6E9Hoz8vWhNNHgcS0B08wPDBahQA0eDiTHOh2MmMnCPPb7ogf-rXl3IQJXEGIIdPTeXabqeAtviyzsIgH6aeVDHBaloX997mfeykxeyQuzCGWm_i2sJxomo8_bDT_tZlb2cfNd3eZG3lpmbwgA9yJR4KYp9HklwsDdHuqYqjVbauAhERP0t7xdM9kuoSTcDK2Z4FB0KnkhZMAZjw41c74-GkxHosCrefkvkf6GaDS3kFDxdPyTeC');"></div>
+                <!-- Overlay Pin Details -->
+                <div class="absolute bottom-space-md left-space-md right-space-md bg-surface/95 backdrop-blur-md p-space-md rounded-2xl shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
+                      <span class="material-symbols-outlined text-[20px]">storefront</span>
+                    </div>
+                    <div>
+                      <h4 class="font-title-md text-title-md text-on-surface font-bold">Sentra Terpadu Panambangan</h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">Kecamatan Sedong, Kabupaten Cirebon 45189</p>
+                    </div>
+                  </div>
+                  <span class="px-space-sm py-1 rounded-full bg-secondary-container text-secondary font-label-sm text-label-sm whitespace-nowrap">
+                    Koordinat: -6.8532, 108.5714
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION KONTAK & ARSIP RESMI (#kontak) -->
+      <section class="py-space-3xl lg:py-space-4xl bg-surface-container-low border-t border-surface-container-high" id="kontak">
+        <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl fade-up">
+            <div class="inline-flex items-center gap-space-xs bg-surface-container px-space-md py-space-2xs rounded-full shadow-sm mb-space-xs">
+              <span class="material-symbols-outlined text-primary text-[16px]">contact_support</span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Layanan Terpadu</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-semibold">
+              Kontak
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Hubungi kami untuk informasi lebih lanjut mengenai Kembang Tahu Panambangan.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 gap-space-lg mx-auto max-w-2xl fade-up">
+            <div class="bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm flex flex-col justify-between">
+              <div class="space-y-space-sm">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[24px]">account_balance</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Pemerintah Desa</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Kantor Desa<br>Jalan Gardu No. 04 A Panambangan<br>Kec. Sedong, Kab. Cirebon<br>Jawa Barat 45189
+                </p>
+                <div class="pt-space-xs space-y-space-2xs text-on-surface-variant font-body-sm text-body-sm">
+                  <p class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+                    <a href="mailto:pemdespanambanganmaju@gmail.com" class="hover:text-primary transition-colors">pemdespanambanganmaju@gmail.com</a>
+                  </p>
+                  <p class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">camera_alt</span>
+                    <a href="https://instagram.com/pemdes.panambangan_maju" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">@pemdes.panambangan_maju</a>
+                  </p>
+                  <p class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">language</span>
+                    <a href="https://panambangan.desa.cirebonkab.go.id" target="_blank" class="hover:text-primary transition-colors">panambangan.desa.cirebonkab.go.id</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-low border-t border-surface-container-high">
+    <div class="max-w-[1240px] mx-auto px-gutter-mobile lg:px-gutter-desktop pt-space-3xl pb-space-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl lg:grid-cols-4">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-xs">
+            <img alt="Logo Kembang Tahu Panambangan" class="h-8 w-auto object-contain" src="img/logo.svg">
+            <span class="font-headline-sm text-headline-sm text-on-surface">Panambangan</span>
+          </div>
+          <div class="p-space-sm bg-surface-container rounded-xl flex items-center gap-space-sm border border-surface-container-high mt-space-xs">
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+              <div class="w-9 h-9 rounded-full bg-white p-1 shadow-sm flex items-center justify-center">
+                <img alt="Logo UMC" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrf08sgFaYHiNWIU6d9fkZGg4tY4-El7_Qj8Y4wLJUhkmc6lCzonJV06gAKxIktcke4qJBjkhHiOR6tsPPs03yXFgMpl0u2JhaaFzHQoI30EyEXEHoUlvgKur2s4uIRRf1YgdeZNHYkkUGfa6N6ib15QpHUMuwbUpsvBqxzuiczBtIg5zB6M-SOgbf_j2XV-T3_v0z9PSGFAUNIKRMSC15RunjfEEWUKLycnzBGbekxrtEJeYmJFFsLqrCygRnBo9gA">
+              </div>
+              <div class="w-9 h-9 rounded-full bg-white p-0.5 shadow-sm flex items-center justify-center">
+                <img alt="Logo KKM 14 UMC" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEqIDGrADahDyI_Epc_YB-uB8-gt-iXVvw1jIfZ_ZI-tRlWzL2TGIzPCjv21kHDqvrNlR3utYr0ygeH3PP5PugKxqFyKiIwBCyCSGfYgyCqFtKH0i66Zj22q3tI2A-SP4iW9hp2uIYSxDGqxJeGwiATnJvegIUT-vuVY6Yqk2WuAKa1oJjbECR6_VI7fZ-F0YEhlElsL91fy3Y88IAu0HOsv7zUirAzeEbE6eKuhfyAaHL880DhYCWo8dOxNC8270F1A">
+              </div>
+            </div>
+            <div class="flex flex-col text-left leading-tight">
+              <span class="font-label-sm text-label-sm font-bold text-on-surface">Kolaborasi Resmi</span>
+              <span class="text-[12px] text-on-surface-variant">KKM 14 UMC &amp; Pemdes Panambangan</span>
+            </div>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Inisiatif pengabdian dan sentralisasi digitalisasi UMKM Kembang Tahu tradisional Desa Panambangan, Kecamatan Sedong, Kabupaten Cirebon, Jawa Barat 45189.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h3 class="font-title-md text-title-md text-on-surface font-semibold">Navigasi Arsip</h3>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+            <li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[16px] text-primary">chevron_right</span><a class="text-on-surface-variant hover:text-primary transition-colors" href="#beranda">Beranda Utama</a></li>
+            <li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[16px] text-primary">chevron_right</span><a class="text-on-surface-variant hover:text-primary transition-colors" href="#sejarah">Sejarah &amp; Warisan</a></li>
+            <li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[16px] text-primary">chevron_right</span><a class="text-on-surface-variant hover:text-primary transition-colors" href="#proses">6 Tahapan Produksi</a></li>
+            <li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[16px] text-primary">chevron_right</span><a class="text-on-surface-variant hover:text-primary transition-colors" href="#galeri">Galeri Dokumentasi</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h3 class="font-title-md text-title-md text-on-surface font-semibold">Pusat Kontak Desa</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Hubungi pengelola sentra dan koordinator UMKM untuk kunjungan edukasi atau kemitraan grosir.</p>
+          <div class="flex flex-col gap-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">mail</span><a href="mailto:pemdespanambanganmaju@gmail.com" class="hover:text-primary transition-colors">pemdespanambanganmaju@gmail.com</a></div>
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">camera_alt</span><a href="https://instagram.com/pemdes.panambangan_maju" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">@pemdes.panambangan_maju</a></div>
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">language</span><a href="https://panambangan.desa.cirebonkab.go.id" target="_blank" class="hover:text-primary transition-colors">panambangan.desa.cirebonkab.go.id</a></div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <h3 class="font-title-md text-title-md text-on-surface font-semibold">Kontak KKM 14 UMC 2026</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Kunjungi jejaring sosial tim pengabdi pelaksana program digitalisasi UMKM.</p>
+          <div class="flex flex-col gap-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">camera_alt</span><a href="https://instagram.com/kkmpanambangan14_umc" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">@kkmpanambangan14_umc</a></div>
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">smart_display</span><a href="https://youtube.com/@kkmpanambangan14umc" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">@kkmpanambangan14umc</a></div>
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">music_note</span><a href="https://tiktok.com/@kkm.panambangan_umc" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">@kkm.panambangan_umc</a></div>
+            <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">mail</span><a href="mailto:kkn14panambangan@gmail.com" class="hover:text-primary transition-colors">kkn14panambangan@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-space-2xl pt-space-lg border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-space-md text-center md:text-left">
+        <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">verified</span> Sistem Informasi Potensi Desa Panambangan &copy; 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DETAIL UMKM -->
+  <div class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm items-center justify-center p-gutter-mobile" id="umkm-modal">
+    <div class="bg-surface-container-lowest w-full max-w-lg rounded-3xl p-space-xl shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeModal()">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+      <div class="flex items-center gap-space-xs text-primary mb-space-xs">
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Profil Terverifikasi</span>
+      </div>
+      <h3 class="font-headline-md text-headline-md text-on-surface font-bold" id="modal-title">Nama UMKM</h3>
+      <p class="font-label-md text-label-md text-primary font-medium mt-1" id="modal-owner">Pemilik: -</p>
+      <div class="mt-space-md space-y-space-xs">
+        <div class="p-space-sm bg-surface-container-low rounded-xl">
+          <span class="font-label-sm text-label-sm text-on-surface-variant block">Alamat Produksi</span>
+          <p class="font-body-md text-body-md text-on-surface font-semibold mt-0.5" id="modal-address">-</p>
+        </div>
+        <div class="p-space-sm bg-surface-container-low rounded-xl">
+          <span class="font-label-sm text-label-sm text-on-surface-variant block">Deskripsi &amp; Keunggulan Layanan</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed" id="modal-description">-</p>
+        </div>
+      </div>
+      <div class="mt-space-lg">
+        <a class="w-full inline-flex items-center justify-center gap-space-xs bg-[#386641] hover:bg-[#2d5234] text-white py-3 px-space-md rounded-xl font-label-md text-label-md transition-colors shadow-md" href="#" id="modal-wa-link" rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          <span class="">Hubungi Langsung via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY LIGHTBOX MODAL (Custom Tailwind) -->
+  <div class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md items-center justify-center p-gutter-mobile" id="lightbox-modal">
+    <button class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors z-10" onclick="closeLightbox()">
+      <span class="material-symbols-outlined text-[28px]">close</span>
+    </button>
+    <div class="max-w-5xl w-full flex flex-col items-center gap-4 relative">
+      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl">
+      <p id="lightbox-caption" class="text-white font-title-md text-title-md text-center max-w-2xl"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // --- Helper UI Functions for Tailwind Modals and Filters ---
+    
+    // UMKM Modal
+    function openModal(id) {
+      if (typeof window.showUMKMDetail === 'function') {
+        window.showUMKMDetail(id);
+      }
+      const modal = document.getElementById('umkm-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('umkm-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('umkm-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Lightbox
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = caption;
+      document.getElementById('lightbox-caption').textContent = caption;
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('lightbox-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    // Filters styling (actual filtering is handled in main.js)
+    function setBlockFilter(block) {
+      window.currentBlockFilter = block;
+      const buttons = document.querySelectorAll('#block-filter-container .filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-block') === block) {
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        }
+      });
+      if (typeof window.filterUmkm === 'function') window.filterUmkm();
+    }
+
+    function filterGallery(category) {
+      window.currentGalleryFilter = category;
+      const buttons = document.querySelectorAll('#gallery-tabs .gallery-tab-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        }
+      });
+      if (typeof window.applyGalleryFilter === 'function') window.applyGalleryFilter();
+    }
+  </script>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

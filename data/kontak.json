@@ -1,0 +1,20 @@
+{
+  "kantorDesa": {
+    "alamat": "Jalan Gardu No. 04 A Panambangan, Kec. Sedong, Kab. Cirebon, Jawa Barat 45189",
+    "whatsapp": "6281234567800",
+    "label": "Pemerintah Desa Panambangan"
+  },
+  "infoUmkm": {
+    "whatsapp": "6281234567801",
+    "label": "Informasi UMKM Kembang Tahu"
+  },
+  "email": "pemdespanambanganmaju@gmail.com",
+  "website": "http://panambangan.desa.cirebonkab.go.id/",
+  "mediaSosial": {
+    "instagram": {
+      "url": "https://www.instagram.com/pemdes.panambangan_maju",
+      "username": "@pemdes.panambangan_maju"
+    }
+  },
+  "googleMapsLink": "https://maps.google.com/?q=Desa+Panambangan+Sedong+Cirebon"
+}

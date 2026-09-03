@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nomor": 1,
+    "nama": "Seleksi Kedelai",
+    "deskripsi": "Memilih kedelai berkualitas tinggi sebagai bahan baku utama",
+    "icon": "bi-box-seam"
+  },
+  {
+    "id": 2,
+    "nomor": 2,
+    "nama": "Perendaman",
+    "deskripsi": "Kedelai direndam hingga mengembang sempurna",
+    "icon": "bi-droplet-half"
+  },
+  {
+    "id": 3,
+    "nomor": 3,
+    "nama": "Penggilingan",
+    "deskripsi": "Kedelai digiling halus menjadi sari kedelai",
+    "icon": "bi-gear"
+  },
+  {
+    "id": 4,
+    "nomor": 4,
+    "nama": "Perebusan & Penggumpalan",
+    "deskripsi": "Sari kedelai direbus lalu digumpalkan hingga bertekstur lembut seperti puding",
+    "icon": "bi-fire"
+  },
+  {
+    "id": 5,
+    "nomor": 5,
+    "nama": "Pembuatan Kuah Jahe",
+    "deskripsi": "Jahe segar direbus bersama gula merah hingga menghasilkan kuah yang hangat dan aromatik",
+    "icon": "bi-cup-hot"
+  },
+  {
+    "id": 6,
+    "nomor": 6,
+    "nama": "Penyajian",
+    "deskripsi": "Kembang Tahu disajikan dalam mangkuk atau cup gelas plastik dengan siraman kuah jahe gula merah hangat",
+    "icon": "bi-egg-fried"
+  }
+]

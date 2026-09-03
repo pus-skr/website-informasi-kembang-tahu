@@ -1,0 +1,29 @@
+{
+  "desa": {
+    "nama": "Desa Panambangan",
+    "kecamatan": "Kecamatan Sedong",
+    "kabupaten": "Kabupaten Cirebon",
+    "provinsi": "Jawa Barat",
+    "kodePos": "45189",
+    "alamatLengkap": "Desa Panambangan, Kecamatan Sedong, Kabupaten Cirebon, Jawa Barat, Indonesia",
+    "petunjukArah": "Dari pusat Kota Cirebon, ambil arah timur menuju Kecamatan Sedong. Desa Panambangan dapat dijangkau melalui jalan desa yang telah beraspal.",
+    "waktuProduksi": "Aktivitas produksi Kembang Tahu umumnya berlangsung pada pagi hari, mulai dini hari hingga menjelang siang.",
+    "akses": "Dapat dijangkau dengan kendaraan roda dua maupun roda empat.",
+    "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15818.68!2d108.75!3d-6.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDesa+Panambangan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
+    "googleMapsLink": "https://maps.google.com/?q=Desa+Panambangan+Sedong+Cirebon"
+  },
+  "sentra": [
+    {
+      "nama": "Sentra Blok Pasar",
+      "deskripsi": "Kawasan produksi utama Kembang Tahu di sekitar area pasar desa"
+    },
+    {
+      "nama": "Sentra Blok Masjid",
+      "deskripsi": "Kelompok perajin Kembang Tahu di sekitar area masjid desa"
+    },
+    {
+      "nama": "Sentra Blok Kidul",
+      "deskripsi": "Kawasan produksi di bagian selatan desa"
+    }
+  ]
+}

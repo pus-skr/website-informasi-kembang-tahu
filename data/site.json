@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "badge": "Desa Panambangan",
+    "judul": "Kembang Tahu Panambangan",
+    "deskripsi": "Minuman tradisional berbahan dasar sari kedelai bertekstur lembut, disajikan dengan kuah jahe hangat dan gula merah. Warisan kuliner yang menjadi kebanggaan Desa Panambangan.",
+    "ctaPrimary": {
+      "teks": "Jelajahi",
+      "icon": "bi-compass",
+      "link": "#tentang"
+    },
+    "ctaSecondary": {
+      "teks": "Lihat UMKM",
+      "icon": "bi-shop",
+      "link": "#umkm"
+    },
+    "statistik": [
+      {
+        "angka": 100,
+        "suffix": "+",
+        "label": "Pelaku UMKM"
+      },
+      {
+        "angka": 50,
+        "suffix": " Thn",
+        "label": "Tradisi Produksi"
+      },
+      {
+        "angka": 100,
+        "suffix": "%",
+        "label": "Produk Lokal"
+      }
+    ]
+  },
+  "keunggulan": [
+    {
+      "icon": "bi-check2-circle",
+      "judul": "Bahan Baku Pilihan",
+      "deskripsi": "Menggunakan kedelai berkualitas tinggi, jahe segar, dan gula merah pilihan untuk menghasilkan cita rasa terbaik."
+    },
+    {
+      "icon": "bi-cup-hot",
+      "judul": "Hangat & Menyegarkan",
+      "deskripsi": "Kuah jahe dan gula merah memberikan sensasi hangat yang menyegarkan tubuh, terutama saat cuaca dingin."
+    },
+    {
+      "icon": "bi-star",
+      "judul": "Tekstur Lembut Khas",
+      "deskripsi": "Sari kedelai diolah hingga bertekstur sangat lembut seperti puding — lembut di mulut dan nikmat di lidah."
+    },
+    {
+      "icon": "bi-geo-alt",
+      "judul": "Produk Lokal Asli",
+      "deskripsi": "Diproduksi langsung oleh pelaku UMKM di Desa Panambangan — mendukung ekonomi lokal dengan resep turun-temurun."
+    }
+  ]
+}

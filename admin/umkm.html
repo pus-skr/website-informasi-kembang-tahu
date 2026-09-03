@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kelola UMKM - Admin Kembang Tahu Panambangan</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <style>
+    @layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-high":"#ebe8e3","on-secondary-fixed-variant":"#22502d","inverse-primary":"#efc04b","outline-variant":"#d1c5af","inverse-on-surface":"#f3f0eb","on-tertiary-container":"#49312c","primary-fixed-dim":"#efc04b","tertiary-container":"#ba9892","primary-container":"#c59a27","outline":"#807663","error-container":"#ffdad6","on-surface-variant":"#4e4635","on-secondary":"#ffffff","inverse-surface":"#31302d","on-tertiary-fixed-variant":"#5b403c","on-background":"#1c1c19","surface-tint":"#775a00","primary":"#775a00","surface-bright":"#fcf9f4","on-tertiary":"#ffffff","on-secondary-container":"#3e6d47","on-surface":"#1c1c19","on-primary":"#ffffff","surface-container":"#f0ede9","on-primary-container":"#473400","secondary":"#3a6843","tertiary-fixed":"#ffdad4","tertiary-fixed-dim":"#e3beb8","primary-fixed":"#ffdf9a","tertiary":"#745853","surface-container-low":"#f6f3ee","on-error":"#ffffff","surface-container-highest":"#e5e2dd","secondary-fixed":"#bcefc0","secondary-container":"#b9ecbd","on-secondary-fixed":"#00210a","on-primary-fixed-variant":"#5a4300","on-tertiary-fixed":"#2b1613","on-error-container":"#93000a","surface-dim":"#dcdad5","surface-container-lowest":"#ffffff","on-primary-fixed":"#251a00","surface":"#fcf9f4","surface-variant":"#e5e2dd","background":"#fcf9f4","secondary-fixed-dim":"#a0d3a5","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","gutter-desktop":"1.5rem","space-lg":"1.5rem","space-xl":"2rem","space-3xl":"4.5rem","space-2xs":"0.25rem","space-xs":"0.5rem","container-max":"1240px","space-sm":"0.75rem","space-2xl":"3rem","space-md":"1rem","space-4xl":"6rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"display-lg":["Playfair Display"],"body-sm":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"headline-sm":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-lg":["56px",{"lineHeight":"68px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}
+  </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container antialiased flex flex-col md:flex-row">
+
+  <!-- Sidebar -->
+  <aside class="w-full md:w-72 md:h-screen md:sticky md:top-0 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col shadow-[4px_0_24px_rgba(62,39,35,0.02)] z-40">
+    <div class="h-20 px-space-md border-b border-outline-variant/30 flex items-center justify-between md:justify-start gap-space-sm flex-shrink-0">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm flex-shrink-0">
+          <span class="material-symbols-outlined text-[22px]">ramen_dining</span>
+        </div>
+        <div class="flex flex-col overflow-hidden">
+          <span class="font-title-md text-[15px] font-bold text-on-surface truncate leading-tight">Admin Portal</span>
+          <span class="font-label-sm text-[11px] text-primary uppercase tracking-widest truncate">Kembang Tahu</span>
+        </div>
+      </div>
+      <button class="md:hidden text-on-surface-variant hover:text-primary transition-colors focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <span class="material-symbols-outlined text-[28px]">menu</span>
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto p-space-md hidden md:block" id="mobile-menu">
+      <div class="space-y-space-xs">
+        <a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="dashboard.html">
+          <span class="material-symbols-outlined text-[22px]">dashboard</span>
+          <span>Dashboard Utama</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-bold transition-all shadow-sm" href="umkm.html">
+          <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+          <span>Kelola UMKM</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="sejarah.html">
+          <span class="material-symbols-outlined text-[22px]">history_edu</span>
+          <span>Arsip Sejarah</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="proses.html">
+          <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+          <span>Data Proses</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="galeri.html">
+          <span class="material-symbols-outlined text-[22px]">photo_library</span>
+          <span>Galeri Visual</span>
+        </a>
+      </div>
+      <div class="mt-space-xl pt-space-md border-t border-outline-variant/30">
+        <a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-error hover:bg-error-container hover:text-on-error-container font-label-md text-label-md transition-all" href="#" id="btn-logout">
+          <span class="material-symbols-outlined text-[22px]">logout</span>
+          <span>Keluar Sesi</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="p-space-md border-t border-outline-variant/30 hidden md:block flex-shrink-0 bg-surface-container-lowest">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 border border-outline-variant/50">
+          <span class="material-symbols-outlined text-primary text-[20px]">admin_panel_settings</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-label-md text-[13px] text-on-surface font-bold">Admin Sentra</span>
+          <span class="font-label-sm text-[11px] text-on-surface-variant">Sesi Aktif</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col min-w-0 bg-surface">
+    <header class="h-20 px-space-lg lg:px-space-xl bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between sticky top-0 z-30">
+      <div>
+        <h1 class="font-headline-sm text-[22px] md:text-headline-sm text-on-surface font-bold">Kelola Data UMKM</h1>
+        <p class="hidden sm:block font-body-sm text-[13px] text-on-surface-variant mt-0.5">Tambah, ubah, dan hapus data pelaku usaha kembang tahu</p>
+      </div>
+      <div class="flex items-center gap-space-sm">
+        <button onclick="openUmkmModal()" class="inline-flex items-center gap-2 px-space-md py-2.5 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-md hover:bg-primary/90 transition-all">
+          <span class="material-symbols-outlined text-[18px]">add</span>
+          <span class="hidden sm:inline">Tambah UMKM</span>
+        </button>
+        <a class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors shadow-sm border border-outline-variant/30" href="../index.html" rel="noopener noreferrer" target="_blank" title="Lihat Website Publik">
+          <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="p-space-lg lg:p-space-xl max-w-[1400px] mx-auto w-full flex-1">
+      <!-- Table Card -->
+      <div class="bg-surface-container-lowest rounded-3xl shadow-sm border border-outline-variant/30 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-outline-variant/30 bg-surface-container-low">
+                <th class="px-space-lg py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Nama UMKM</th>
+                <th class="px-space-lg py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider hidden md:table-cell">Pemilik</th>
+                <th class="px-space-lg py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider hidden lg:table-cell">Lokasi</th>
+                <th class="px-space-lg py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider hidden sm:table-cell">Status</th>
+                <th class="px-space-lg py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="umkm-table-body">
+              <tr>
+                <td colspan="5" class="px-space-lg py-space-xl text-center text-on-surface-variant font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-[40px] block mb-2 text-outline">hourglass_empty</span>
+                  Memuat data...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Tambah/Edit UMKM -->
+  <div class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm items-center justify-center p-4" id="umkmModal">
+    <div class="bg-surface-container-lowest w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between px-space-xl py-space-lg border-b border-outline-variant/30">
+        <h2 class="font-headline-sm text-headline-sm text-on-surface" id="umkmModalLabel">Tambah UMKM</h2>
+        <button onclick="closeUmkmModal()" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div class="p-space-xl overflow-y-auto max-h-[70vh]">
+        <form id="umkm-form" class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+          <input type="hidden" id="umkm-id">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-nama">Nama UMKM</label>
+            <input type="text" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30" id="umkm-nama" required placeholder="Nama usaha...">
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-pemilik">Nama Pemilik</label>
+            <input type="text" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30" id="umkm-pemilik" required placeholder="Nama pemilik...">
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-whatsapp">No. WhatsApp</label>
+            <input type="text" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30" id="umkm-whatsapp" placeholder="Contoh: 6281234567890">
+            <span class="font-label-sm text-[11px] text-on-surface-variant">Gunakan awalan 62, tanpa tanda + atau spasi</span>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-status">Status</label>
+            <select class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30" id="umkm-status">
+              <option value="aktif">Aktif</option>
+              <option value="nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1.5 md:col-span-2">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-lokasi">Lokasi / Blok</label>
+            <input type="text" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30" id="umkm-lokasi" required placeholder="Contoh: Blok A, Desa Panambangan...">
+          </div>
+          <div class="flex flex-col gap-1.5 md:col-span-2">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-produk">Produk Utama</label>
+            <input type="text" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30" id="umkm-produk" required placeholder="Contoh: Kembang Tahu Original, Kembang Tahu Jahe Merah">
+          </div>
+          <div class="flex flex-col gap-1.5 md:col-span-2">
+            <label class="font-label-md text-label-md text-on-surface" for="umkm-deskripsi">Deskripsi</label>
+            <textarea class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-outline-variant/30 resize-none" id="umkm-deskripsi" rows="3" required placeholder="Deskripsi singkat usaha..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="flex items-center justify-end gap-3 px-space-xl py-space-lg border-t border-outline-variant/30">
+        <button onclick="closeUmkmModal()" class="px-space-lg py-2.5 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">Batal</button>
+        <button id="btn-save-umkm" class="px-space-lg py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary/90 transition-all">Simpan Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="fixed inset-0 z-[60] hidden bg-black/50 backdrop-blur-sm items-center justify-center p-4" id="deleteConfirmModal">
+    <div class="bg-surface-container-lowest w-full max-w-sm rounded-3xl p-space-xl shadow-2xl text-center">
+      <div class="w-14 h-14 rounded-full bg-error-container text-error flex items-center justify-center mx-auto mb-space-md">
+        <span class="material-symbols-outlined text-[28px]">warning</span>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Konfirmasi Hapus</h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dibatalkan.</p>
+      <div class="flex gap-3 justify-center">
+        <button onclick="closeDeleteModal()" class="px-space-lg py-2.5 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">Batal</button>
+        <button id="btn-confirm-delete" class="px-space-lg py-2.5 rounded-xl bg-error text-on-error font-label-md text-label-md shadow-md hover:bg-error/90 transition-all">Ya, Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js?v=2.0"></script>
+  <script>
+    function openUmkmModal(){ document.getElementById('umkmModal').classList.remove('hidden'); document.getElementById('umkmModal').classList.add('flex'); }
+    function closeUmkmModal(){ document.getElementById('umkmModal').classList.add('hidden'); document.getElementById('umkmModal').classList.remove('flex'); }
+    function openDeleteModal(){ document.getElementById('deleteConfirmModal').classList.remove('hidden'); document.getElementById('deleteConfirmModal').classList.add('flex'); }
+    function closeDeleteModal(){ document.getElementById('deleteConfirmModal').classList.add('hidden'); document.getElementById('deleteConfirmModal').classList.remove('flex'); }
+    // Expose for admin.js compatibility
+    window._openUmkmModal = openUmkmModal;
+    window._closeUmkmModal = closeUmkmModal;
+    window._openDeleteModal = openDeleteModal;
+    window._closeDeleteModal = closeDeleteModal;
+  </script>
+</body>
+</html>

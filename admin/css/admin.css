@@ -1,0 +1,241 @@
+/* ============================================
+   KEMBANG TAHU PANAMBANGAN - ADMIN CSS
+   ============================================ */
+
+:root {
+  --gold: #D4A853;
+  --gold-light: #E8C97A;
+  --gold-dark: #B8893A;
+  --cream: #FFF8E7;
+  --brown-dark: #3C2415;
+  --brown: #5C3D2E;
+  --white: #FFFFFF;
+  --bg-light: #f4f6f9;
+  --sidebar-width: 250px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--brown-dark);
+}
+
+/* --- Login Page --- */
+.login-body {
+  background: linear-gradient(135deg, var(--brown-dark), var(--brown));
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.login-header p {
+  color: var(--brown);
+  font-size: 0.9rem;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border-right: none;
+  color: var(--gold-dark);
+}
+
+.login-container .form-control {
+  border-left: none;
+}
+
+.login-container .form-control:focus {
+  border-color: #dee2e6;
+  box-shadow: none;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 0 0 0.25rem rgba(212, 168, 83, 0.25);
+  border-radius: 0.375rem;
+}
+
+.input-group:focus-within .form-control,
+.input-group:focus-within .input-group-text {
+  border-color: var(--gold);
+}
+
+.btn-login {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+}
+
+.btn-login:hover {
+  background: linear-gradient(135deg, var(--gold-dark), #9a722f);
+  color: var(--white);
+}
+
+.back-to-site {
+  color: var(--brown);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.back-to-site:hover {
+  color: var(--gold-dark);
+}
+
+/* --- Admin Dashboard Layout --- */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--brown-dark);
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.sidebar-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  color: var(--gold-light);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  padding: 0;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.sidebar-menu a i {
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background: rgba(212, 168, 83, 0.15);
+  color: var(--gold-light);
+  border-left: 4px solid var(--gold);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background: var(--white);
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.content-body {
+  padding: 24px;
+  flex: 1;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 24px;
+}
+
+/* Dashboard Cards */
+.stat-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-right: 20px;
+}
+
+.stat-icon.gold { background: rgba(212, 168, 83, 0.15); color: var(--gold-dark); }
+.stat-icon.green { background: rgba(45, 90, 39, 0.15); color: var(--green); }
+.stat-icon.brown { background: rgba(92, 61, 46, 0.15); color: var(--brown); }
+
+.stat-details h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.stat-details p {
+  color: #6c757d;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}

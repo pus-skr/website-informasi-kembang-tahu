@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "judul": "Seleksi Bahan Baku Kedelai",
+        "kategori": "Produksi",
+        "deskripsi": "Proses pemilihan kedelai berkualitas sebagai bahan baku utama Kembang Tahu",
+        "src": "assets\/images\/process-soybeans.png"
+    },
+    {
+        "id": 2,
+        "judul": "Proses Produksi UMKM",
+        "kategori": "Produksi",
+        "deskripsi": "Aktivitas produksi Kembang Tahu oleh pelaku UMKM di Desa Panambangan",
+        "src": "assets\/images\/gallery-production.png"
+    },
+    {
+        "judul": "Perebusan Susu Kedelai dan Jahe ",
+        "kategori": "Produksi",
+        "src": "assets\/images\/gallery-boiling.png",
+        "id": 3
+    },
+    {
+        "id": 4,
+        "judul": "Produk Kembang Tahu",
+        "kategori": "Produk",
+        "deskripsi": "Kembang Tahu siap saji dengan kuah jahe dan gula merah",
+        "src": "assets\/images\/gallery-product.png"
+    },
+    {
+        "id": 5,
+        "judul": "Olahan Kuliner Kembang Tahu",
+        "kategori": "Produk",
+        "deskripsi": "Variasi olahan kuliner berbahan dasar Kembang Tahu",
+        "src": "assets\/images\/gallery-cuisine.png"
+    }
+]

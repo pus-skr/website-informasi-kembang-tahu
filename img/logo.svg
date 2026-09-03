@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60" fill="none">
+  <!-- Brand Icon -->
+  <g transform="translate(10, 6)">
+    <circle cx="24" cy="24" r="23" fill="#FAF5EB" stroke="#C59A27" stroke-width="2"/>
+    <!-- Bowl / traditional silhouette -->
+    <path d="M12 26 C12 36, 36 36, 36 26 Z" fill="#C59A27"/>
+    <!-- Gentle steam / tofu layer swirl -->
+    <path d="M16 22 C18 16, 22 17, 20 12" stroke="#8C6615" stroke-width="2" stroke-linecap="round"/>
+    <path d="M24 22 C26 15, 30 16, 28 11" stroke="#386641" stroke-width="2" stroke-linecap="round"/>
+    <path d="M31 22 C33 17, 36 18, 35 13" stroke="#8C6615" stroke-width="2" stroke-linecap="round"/>
+    <!-- Ginger leaf accent -->
+    <path d="M24 35 C27 40, 34 39, 36 34 C33 34, 28 34, 24 35 Z" fill="#386641"/>
+  </g>
+  <!-- Text Brand -->
+  <text x="68" y="27" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="800" fill="#2C1810" letter-spacing="1.5">KEMBANG TAHU</text>
+  <text x="68" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#C59A27" letter-spacing="3.5">PANAMBANGAN</text>
+</svg>
